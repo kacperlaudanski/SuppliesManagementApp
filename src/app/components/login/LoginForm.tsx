@@ -1,8 +1,13 @@
 "use client";
 
+import React, { useState } from "react";
 import Input from "../Input";
 
 export default function LoginForm() {
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <form>
       <div>
@@ -10,16 +15,20 @@ export default function LoginForm() {
         <h1 className="text-2xl font-bold">Login to your account</h1>
       </div>
       <Input
-        page={"loginForm"}
+        page="loginForm"
+        id="email"
         type="email"
-        name="password"
-        placeholder="email"
+        name="Email"
+        placeholder="Email"
+        onChange={(e) => setTimeout(() => {setEmail(e.target.value)}, 1500)}
       />
       <Input
-        page={"loginForm"}
+        page="loginForm"
+        id="password"
         type="password"
-        name="password"
-        placeholder="password"
+        name="Password"
+        placeholder="Password"
+        onChange={(e) => setTimeout(() => {setPassword(e.target.value)}, 1500)}
       />
       <div className="flex justify-between mt-5">
         <div>
