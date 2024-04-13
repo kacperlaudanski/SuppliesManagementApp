@@ -1,12 +1,22 @@
+import Link from "next/link";
 import Input from "../../../components/Input";
+import LoginForm from "../../../components/login/LoginForm";
 
 export default function LoginPage() {
   return (
-    <main className="w-8/12 h-3/5 bg-red-200 flex flex-column justify-center p-8">
-      <h1 className="text-4xl">Login</h1>
-      <form className="w-5/6 h-full">
-        <Input page={'loginForm'}/> 
-      </form>
+    <main className={`min-h-screen`}>
+      <div className="flex justify-center w-full">
+        <div className="bg-white min-h-screen w-3/4 flex justify-center items-center">
+          <div className="sm:w-full md:w-1/2">
+            <LoginForm /> 
+            <p className="mt-8">
+              {" "}
+              Dont have an account?{" "}
+              <Link href={'/register'} className='text-red-400 hover:text-red-600'>Join free today</Link>
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
