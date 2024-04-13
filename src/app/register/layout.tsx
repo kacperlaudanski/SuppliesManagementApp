@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function RegisterLayout({children}: {children: ReactNode}){
     return (
-        <html>
+        <html suppressHydrationWarning>
             <body>
                 {children}
             </body>
