@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function LoginLayout({children}: {children: ReactNode}){
     return (
         <html>
-            <body className="w-screen h-screen bg-neutral-200 flex items-center justify-center">
+            <body>
                 {children}
             </body>
         </html>
