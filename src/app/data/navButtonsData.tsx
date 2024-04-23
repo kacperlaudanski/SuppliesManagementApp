@@ -4,7 +4,6 @@ import {
   Search,
   Bell,
   Settings,
-  LogOut,
 } from "lucide-react";
 
 export const navTopButtons = [
@@ -38,10 +37,5 @@ export const navBottomButtons = [
     name: "Settings",
     id: "settings",
     icon: <Settings />
-  },
-  {
-    name: "Log Out",
-    id: "logout",
-    icon: <LogOut /> 
   },
 ]

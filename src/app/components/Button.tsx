@@ -5,8 +5,8 @@ import { ComponentProps } from "react";
 const buttonStyle = cva(['transition-all duration-300 flex items-center'], {
     variants:{
        variant:{
-        navbarExtended:["w-full h-[85%] bg-neutral-100 rounded-md text-sm px-4 justify-between"],
-        navbarRolled:['w-full bg-neutral-100 rounded-md justify-center']
+        navbarExtended:["w-full h-[45px] bg-neutral-100 rounded-md text-sm px-4 justify-between"],
+        navbarRolled:['w-full min-h-[55px] bg-neutral-100 rounded-md flex justify-center items-center']
        }
     }
 })
