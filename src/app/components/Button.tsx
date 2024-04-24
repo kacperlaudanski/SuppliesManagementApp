@@ -5,10 +5,11 @@ import { ComponentProps } from "react";
 const buttonStyle = cva(['transition-all duration-300 flex items-center'], {
     variants:{
       status:{
-        tabActive:['bg-[#ffc857]']
+        tabActive:['bg-[#ffc857]'], 
+        tabInActive:['bg-neutral-100']
       }, 
       location:{
-        navButton: ['bg-neutral-100 rounded-md text-sm px-4 hover:bg-[#ffc857]']
+        navButton: ['rounded-md text-sm px-4 hover:bg-[#ffc857]']
       },
        variant:{
         navbarExtended:["w-full h-[45px] justify-between"],

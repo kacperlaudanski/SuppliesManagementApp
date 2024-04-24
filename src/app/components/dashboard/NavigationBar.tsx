@@ -30,10 +30,10 @@ export default function NavigationBar() {
         >
           {navTopButtons.map((button) => {
             return (
-              <Link href={button.path}>
+              <Link href={button.path} key={button.id}>
                 <Button
                   key={button.id}
-                  status={path === button.path ? 'tabActive' : null}
+                  status={button.path === path ? 'tabActive' : 'tabInActive'}
                   location={'navButton'}
                   variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
                   id={button.id}
@@ -51,6 +51,7 @@ export default function NavigationBar() {
           return (
             <Button
               key={button.id}
+              status={'tabInActive'}
               location={'navButton'}
               variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
               id={button.id}
