@@ -22,7 +22,7 @@ export const navTopButtons = [
   {
     name: "Search",
     id: "search",
-    path: "/search",
+    path: "/dashboard/search",
     icon: <Search /> 
   },
 ];

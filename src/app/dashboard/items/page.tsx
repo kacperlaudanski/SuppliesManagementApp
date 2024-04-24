@@ -1,5 +1,5 @@
 export default function Items() {
   return (
-      <h1>Items</h1>
+      <h1></h1>
   );
 }
