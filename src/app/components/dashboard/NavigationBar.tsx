@@ -1,14 +1,12 @@
 "use client";
 
-import { SignOutButton, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
 import { navTopButtons, navBottomButtons } from "@/app/data/navButtonsData";
-
 import Button from "../Button";
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import Logo from '../../../images/logo.png'
+import LogoIcon from '../../../images/logo-icon.png'
 
 export default function NavigationBar() {
   const path = usePathname();
@@ -21,20 +19,22 @@ export default function NavigationBar() {
       onMouseEnter={() => setSidebarVisibility(true)}
       className={`${
         isSidebarVisible ? "w-[300px]" : "w-[120px]"
-      } transition-all duration-300 ease-in-out h-screen sticky bg-sky-200 p-8 flex flex-col justify-between items-center`}
+      } transition-all duration-300 ease-in-out h-screen sticky bg-[#1f2041] p-8 flex flex-col justify-between items-center`}
     >
       <div className="w-full flex flex-col justify-between">
         <div className="w-full h-[50px] flex justify-center items-center">
-          LOGO
+          {isSidebarVisible ? <img src={Logo.src} alt='logo'/> : <img src={LogoIcon.src} alt='logo'/>}
         </div>
         <div
           className={`w-full grid grid-cols-1 gap-5 mt-6`}
         >
           {navTopButtons.map((button) => {
             return (
-              <Link href={button.path}>
+              <Link href={button.path} key={button.id}>
                 <Button
                   key={button.id}
+                  status={button.path === path ? 'tabActive' : 'tabInActive'}
+                  location={'navButton'}
                   variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
                   id={button.id}
                 >
@@ -51,6 +51,8 @@ export default function NavigationBar() {
           return (
             <Button
               key={button.id}
+              status={'tabInActive'}
+              location={'navButton'}
               variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
               id={button.id}
             >
