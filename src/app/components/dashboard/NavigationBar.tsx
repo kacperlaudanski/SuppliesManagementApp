@@ -34,7 +34,7 @@ export default function NavigationBar() {
                 <Button
                   key={button.id}
                   status={button.path === path ? 'tabActive' : 'tabInActive'}
-                  location={'navButton'}
+                  location={'nav'}
                   variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
                   id={button.id}
                 >
@@ -52,7 +52,7 @@ export default function NavigationBar() {
             <Button
               key={button.id}
               status={'tabInActive'}
-              location={'navButton'}
+              location={'nav'}
               variant={isSidebarVisible ? "navbarExtended" : "navbarRolled"}
               id={button.id}
             >
