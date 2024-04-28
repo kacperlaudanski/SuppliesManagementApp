@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import AsideTab from "@/app/components/items/AsideTab";
 import Button from "@/app/components/Button";
 import { Package, Truck } from "lucide-react";
+import SearchingBox from "@/app/components/items/SearchingBox";
 
 export const metadata: Metadata = {
   title: "Items - StockWise",
@@ -11,12 +12,10 @@ export default function ItemsLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <AsideTab>
-        <div className="w-full h-[100px] flex justify-between items-center">
-          Searching box
-        </div>
-        <div className="w-full flex justify-between items-center border-solid border-inherit">
-          <Button>Add Supplier</Button>
-          <Button>Add Item</Button>
+        <SearchingBox /> 
+        <div className="w-full flex flex-col justify-between items-center border-solid border-inherit">
+          <Button variant={'asideActionButton'}><Truck className="mx-2"/>Add Supplier</Button>
+          <Button variant={'asideActionButton'}><Package className="mx-2"/>Add Item</Button>
         </div>
         <div className="w-full flex flex-col mt-4">
           <Button location={"asideTab"} variant={"asideSupplierButton"}>
