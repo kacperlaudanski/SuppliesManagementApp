@@ -1,7 +1,7 @@
 "use client";
 import { ChevronLeft, FolderOpen } from "lucide-react";
 import { ReactNode, useState } from "react";
-import Button from "../Button";
+import Button from "./Button"
 
 export default function AsideTab({ children }: { children: ReactNode }) {
   const [isAsideVisible, setAsideVisibility] = useState(false);

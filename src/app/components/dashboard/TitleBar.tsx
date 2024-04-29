@@ -1,7 +1,6 @@
 "use client";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
-import Button from "../Button";
 
 export default function TitleBar() {
   const path = usePathname();
