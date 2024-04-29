@@ -30,7 +30,7 @@ export default function NavigationBar() {
         >
           {navTopButtons.map((button) => {
             return (
-              <Link href={button.path} key={button.id}>
+              <Link href={`/something/${button.path}`} key={button.id} as={button.path}>
                 <Button
                   key={button.id}
                   status={button.path === path ? 'tabActive' : 'tabInActive'}
