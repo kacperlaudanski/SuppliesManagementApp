@@ -1,8 +1,50 @@
+"use client";
+import { useEffect, useRef } from "react";
+import Button from "../Button";
+import FormHeader from "../FormHeader";
+import Input from "../Input";
 
-export default function SupplierAddForm() {
+interface SuppliersAddModal {
+  openModal: boolean;
+  onCloseModal: () => void;
+}
+
+export default function SupplierAddModal({
+  openModal,
+  onCloseModal,
+}: SuppliersAddModal) {
+  const ref = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (openModal) return ref.current?.showModal();
+    if (!openModal) return ref.current?.close();
+  }, [openModal]);
+
   return (
-    <dialog>
-        
+    <dialog
+      ref={ref}
+      onClose={onCloseModal}
+      className={"w-1/2 bg-neutral-100 rounded-lg"}
+    >
+      <FormHeader onCloseModal={onCloseModal} />
+      <form className="w-full p-4 flex flex-col">
+        <div className="w-full">
+          <Input type="text" placeholder="Name" variant="itemAddForm" />
+        </div>
+        <div className="w-full">
+          <Input type="text" placeholder="Address" variant="itemAddForm" />
+        </div>
+        <div className="w-full">
+          <Input type="email" placeholder="Email" variant="itemAddForm" />
+        </div>
+        <div className="w-full">
+          <Input type="text" placeholder="Phone Number" variant="itemAddForm" />
+        </div>
+        <div className="w-full">
+          <Input type="date" placeholder="Delivery Time" variant="itemAddForm" />
+        </div>
+        <Button>ADD SUPPLIER</Button>
+      </form>
     </dialog>
-  )
+  );
 }

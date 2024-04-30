@@ -4,12 +4,16 @@ import { ComponentProps } from "react";
 
 const inputStyles = cva([], {
   variants: {
-    page: {},
+    variant: {
+      itemAddForm: ['w-full h-[40px]'], 
+    },
   },
 });
 
 type Input = VariantProps<typeof inputStyles> & ComponentProps<"input">;
 
-export default function Input({ page, ...props }: Input) {
-  return <></>;
+export default function Input({ variant, ...props }: Input) {
+  return <>
+      <input {...props} className={inputStyles({variant})}/> 
+  </>;
 }
