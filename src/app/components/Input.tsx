@@ -5,7 +5,10 @@ import { ComponentProps } from "react";
 const inputStyles = cva([], {
   variants: {
     variant: {
-      itemAddForm: ['w-full h-[40px]'], 
+      name: ['h-[40px] mx-2 flex-grow outline-none'], 
+      quantity:['w-3/4 h-[40px] mx-2 flex-grow outline-none'], 
+      minQuantity: ['h-[40px] mx-2 flex-grow outline-none rounded-md']
+
     },
   },
 });
