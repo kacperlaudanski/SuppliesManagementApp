@@ -9,7 +9,8 @@ const buttonStyle = cva(['transition-all duration-300 flex items-center'], {
       }, 
       location:{
         nav: ['rounded-md text-sm px-4 hover:bg-[#ffc857]'],
-        asideTab: ['flex']
+        asideTab: ['flex'], 
+        form:[]
       },
        variant:{
         navbarExtended:["w-full h-[45px] justify-between"],
@@ -17,6 +18,7 @@ const buttonStyle = cva(['transition-all duration-300 flex items-center'], {
         showAsideTab: [`w-[40px] h-[40px] bg-white justify-center items-center border-2 border-inherit border-solid absolute top-10 right-[-20px] rounded-full hover:bg-[#ffc857]`], 
         asideSupplierButton:['w-full h-[40px] rounded-md text-sm mt-2 hover:bg-[#ffc857]'], 
         asideActionButton:['w-full h-[40px] my-2 flex justify-center items-center rounded-md text-sm bg-neutral-200 hover:bg-[#ffc857]'], 
+        formSubmit:['w-2/6 h-[45px] text-white bg-[#1f2041] hover:bg-[#ffc857] hover:text-black rounded-md flex items-center justify-center']
        }
     }
 })
