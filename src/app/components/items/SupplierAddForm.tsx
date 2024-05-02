@@ -2,8 +2,8 @@
 import { PackageSearch } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Button from "../Button";
-import FormHeader from "../FormHeader";
-import Input from "../Input";
+import FormHeader from "../form/FormHeader";
+import Input from "../form/Input";
 
 interface SuppliersAddModal {
   openModal: boolean;
