@@ -5,7 +5,12 @@ import { Building2, Mail, MapPin, Phone, CalendarDays } from "lucide-react";
 import { FormEvent } from "react";
 
 export default function SupplierAddForm() {
-  function formHandler(event: FormEvent) {event.preventDefault()}
+
+  function formHandler(event: FormEvent) {
+    event.preventDefault()
+    const fd = new FormData(event.target as HTMLFormElement)
+    const supplierData = Object.fromEntries(fd.entries())
+}
 
   return (
     <form
@@ -14,22 +19,22 @@ export default function SupplierAddForm() {
     >
       <InputWrapper width="w-full">
         <Building2 />
-        <Input type="text" placeholder="Name" variant="name" />
+        <Input type="text" placeholder="Name" variant="name" name="name"/>
       </InputWrapper>
       <div className="flex gap-4">
         <InputWrapper width="w-1/2">
           <MapPin />
-          <Input type="text" placeholder="Address" variant="suppliers" />
+          <Input type="text" placeholder="Address" variant="suppliers" name="address"/>
         </InputWrapper>
         <InputWrapper width="w-1/2">
           <Mail />
-          <Input type="email" placeholder="Email" variant="suppliers" />
+          <Input type="email" placeholder="Email" variant="suppliers" name="email"/>
         </InputWrapper>
       </div>
       <div className="flex gap-4">
         <InputWrapper width="w-3/5">
           <Phone />
-          <Input type="text" placeholder="Phone Number" variant="suppliers" />
+          <Input type="text" placeholder="Phone Number" variant="suppliers" name="phoneNumber"/>
         </InputWrapper>
         <InputWrapper width="w-2/5">
           <CalendarDays />
@@ -37,6 +42,7 @@ export default function SupplierAddForm() {
             type="number"
             placeholder="Delivery Lead Time (days)"
             variant="suppliers"
+            name="leadTime"
           />
         </InputWrapper>
       </div>
