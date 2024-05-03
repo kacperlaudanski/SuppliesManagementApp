@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { ReactNode } from "react";
-import NavigationBar from "../components/dashboard/NavigationBar";
-import TitleBar from "../components/dashboard/TitleBar";
+import NavigationBar from "./_components/NavigationBar";
+import TitleBar from "./_components/TitleBar";
 
 export const metadata: Metadata = {
   title: "Dashboard - StockWise",

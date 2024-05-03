@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navTopButtons, navBottomButtons } from "@/app/data/navButtonsData";
-import Button from "../Button";
+import Button from "../../components/Button";
 import Link from "next/link";
 import Logo from '../../../images/logo.png'
 import LogoIcon from '../../../images/logo-icon.png'

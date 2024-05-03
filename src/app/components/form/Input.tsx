@@ -7,8 +7,8 @@ const inputStyles = cva([], {
     variant: {
       name: ['h-[40px] mx-2 flex-grow outline-none'], 
       quantity:['w-3/4 h-[40px] mx-2 flex-grow outline-none'], 
-      minQuantity: ['h-[40px] mx-2 flex-grow outline-none rounded-md']
-
+      minQuantity: ['h-[40px] mx-2 flex-grow outline-none rounded-md'],
+      file: ['text-neutral-400 bg-white']
     },
   },
 });
