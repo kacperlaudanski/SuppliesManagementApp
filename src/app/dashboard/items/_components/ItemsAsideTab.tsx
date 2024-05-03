@@ -1,8 +1,8 @@
 'use client'
 import Button from "@/app/components/Button";
 import { Package, Truck } from "lucide-react";
-import SearchingBox from "@/app/components/items/SearchingBox";
-import AsideTab from "../AsideTab";
+import SearchBox from "@/app/dashboard/items/_components/SearchBox";
+import AsideTab from "../../../components/AsideTab";
 import ItemsAddModal from "./ItemsAddModal";
 import { useState } from "react";
 import SupplierAddModal from "./SupplierAddForm";
@@ -15,7 +15,7 @@ export default function ItemsAsideTab() {
   return (
     <>
     <AsideTab>
-    <SearchingBox />
+    <SearchBox />
       <div className="w-full flex flex-col justify-between items-center border-solid border-inherit">
         <Button variant={"asideActionButton"} onClick={() => setOpenSupplierModal(true)}>
           <Truck className="mx-2" />

@@ -1,9 +1,9 @@
 "use client";
 import { PackageSearch } from "lucide-react";
 import { useEffect, useRef } from "react";
-import Button from "../Button";
-import FormHeader from "../form/FormHeader";
-import Input from "../form/Input";
+import Button from "../../../components/Button";
+import FormHeader from "../../../components/form/FormHeader";
+import Input from "../../../components/form/Input";
 
 interface SuppliersAddModal {
   openModal: boolean;

@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react"
 
-export default function SearchingBox() {
+export default function SearchBox() {
   return (
     <div className="w-full h-[80px] flex justify-around mb-6 items-center text-neutral-400 border-b-2">
       <Search /> 

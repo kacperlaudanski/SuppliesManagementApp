@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import ItemsAddForm from "./ItemsAddForm";
-import FormHeader from "../form/FormHeader";
+import FormHeader from "../../../components/form/FormHeader";
 
 
 interface ItemAddModal {
