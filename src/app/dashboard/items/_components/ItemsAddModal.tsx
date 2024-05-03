@@ -19,7 +19,7 @@ export default function ItemsAddModal({ openModal, onCloseModal }: ItemAddModal)
   }, [openModal]);
 
   return (
-    <dialog onClose={onCloseModal} ref={ref} className={"w-1/2 max-w-[800px] h-[85%] max-h-[800px] bg-neutral-100 rounded-lg"}>
+    <dialog onClose={onCloseModal} ref={ref} className={"w-1/2 max-w-[800px] h-[85%] max-h-[700px] bg-neutral-100 rounded-lg"}>
       <FormHeader name={"ADD ITEM"} onCloseModal={onCloseModal} />
       <ItemsAddForm />
     </dialog>

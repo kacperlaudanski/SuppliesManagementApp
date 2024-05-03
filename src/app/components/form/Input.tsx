@@ -2,13 +2,14 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { ComponentProps } from "react";
 
-const inputStyles = cva([], {
+const inputStyles = cva(['outline-none'], {
   variants: {
     variant: {
-      name: ['h-[40px] mx-2 flex-grow outline-none'], 
-      quantity:['w-3/4 h-[40px] mx-2 flex-grow outline-none'], 
-      minQuantity: ['h-[40px] mx-2 flex-grow outline-none rounded-md'],
-      file: ['text-neutral-400 bg-white']
+      name: ['h-[40px] mx-2 flex-grow '], 
+      quantity:['w-3/4 h-[40px] mx-2 flex-grow'], 
+      minQuantity: ['h-[40px] mx-2 flex-grow rounded-md'],
+      file: ['text-neutral-400 bg-white'],
+      suppliers: ['w-full h-[40px] mx-2 ']
     },
   },
 });

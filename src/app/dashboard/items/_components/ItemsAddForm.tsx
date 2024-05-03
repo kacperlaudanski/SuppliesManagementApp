@@ -17,7 +17,8 @@ import { FormEvent } from "react";
 export default function ItemsAddForm() {
   function formHandler(event: FormEvent) {
     event.preventDefault();
-    //....
+    const fd = new FormData(event.target as HTMLFormElement)
+    const itemData = Object.fromEntries(fd.entries())
   }
 
   return (

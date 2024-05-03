@@ -5,7 +5,7 @@ import SearchBox from "@/app/dashboard/items/_components/SearchBox";
 import AsideTab from "../../../components/AsideTab";
 import ItemsAddModal from "./ItemsAddModal";
 import { useState } from "react";
-import SupplierAddModal from "./SupplierAddForm";
+import SupplierAddModal from "./SupplierAddModal";
 
 export default function ItemsAsideTab() {
 

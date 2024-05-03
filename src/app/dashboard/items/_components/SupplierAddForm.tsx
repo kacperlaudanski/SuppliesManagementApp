@@ -1,53 +1,52 @@
-"use client";
-import { PackageSearch } from "lucide-react";
-import { useEffect, useRef } from "react";
-import Button from "../../../components/Button";
-import FormHeader from "../../../components/form/FormHeader";
-import Input from "../../../components/form/Input";
+import Button from "@/app/components/Button";
+import Input from "@/app/components/form/Input";
+import InputWrapper from "@/app/components/form/InputWrapper";
+import { Building2, Mail, MapPin, Phone, CalendarDays } from "lucide-react";
+import { FormEvent } from "react";
 
-interface SuppliersAddModal {
-  openModal: boolean;
-  onCloseModal: () => void;
+export default function SupplierAddForm() {
+
+  function formHandler(event: FormEvent) {
+    event.preventDefault()
+    const fd = new FormData(event.target as HTMLFormElement)
+    const supplierData = Object.fromEntries(fd.entries())
 }
 
-export default function SupplierAddModal({
-  openModal,
-  onCloseModal,
-}: SuppliersAddModal) {
-  const ref = useRef<HTMLDialogElement>(null);
-
-  useEffect(() => {
-    if (openModal) return ref.current?.showModal();
-    if (!openModal) return ref.current?.close();
-  }, [openModal]);
-
   return (
-    <dialog
-      ref={ref}
-      onClose={onCloseModal}
-      className={"w-1/2 max-w-[800px] h-3/4 max-h-[800px] bg-neutral-100 rounded-lg"}
+    <form
+      className="w-full h-[75%] mt-4 p-4 flex flex-col justify-between"
+      onSubmit={(event) => formHandler(event)}
     >
-      <FormHeader name={'ADD SUPPLIER'} onCloseModal={onCloseModal} />
-      <form className="w-full p-4 flex flex-col 
-      ">
-        <div className="w-full">
-          
-          <Input type="text" placeholder="Name" variant="itemAddForm" />
-        </div>
-        <div className="w-full">
-          <Input type="text" placeholder="Address" variant="itemAddForm" />
-        </div>
-        <div className="w-full">
-          <Input type="email" placeholder="Email" variant="itemAddForm" />
-        </div>
-        <div className="w-full">
-          <Input type="text" placeholder="Phone Number" variant="itemAddForm" />
-        </div>
-        <div className="w-full">
-          <Input type="date" placeholder="Delivery Time" variant="itemAddForm" />
-        </div>
-        <Button>ADD SUPPLIER</Button>
-      </form>
-    </dialog>
+      <InputWrapper width="w-full">
+        <Building2 />
+        <Input type="text" placeholder="Name" variant="name" name="name"/>
+      </InputWrapper>
+      <div className="flex gap-4">
+        <InputWrapper width="w-1/2">
+          <MapPin />
+          <Input type="text" placeholder="Address" variant="suppliers" name="address"/>
+        </InputWrapper>
+        <InputWrapper width="w-1/2">
+          <Mail />
+          <Input type="email" placeholder="Email" variant="suppliers" name="email"/>
+        </InputWrapper>
+      </div>
+      <div className="flex gap-4">
+        <InputWrapper width="w-3/5">
+          <Phone />
+          <Input type="text" placeholder="Phone Number" variant="suppliers" name="phoneNumber"/>
+        </InputWrapper>
+        <InputWrapper width="w-2/5">
+          <CalendarDays />
+          <Input
+            type="number"
+            placeholder="Delivery Lead Time (days)"
+            variant="suppliers"
+            name="leadTime"
+          />
+        </InputWrapper>
+      </div>
+      <Button variant="formSubmit">ADD SUPPLIER</Button>
+    </form>
   );
 }
