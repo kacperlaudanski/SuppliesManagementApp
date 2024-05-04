@@ -7,9 +7,11 @@ import TextareaInput from "../../../components/form/TextareaInput";
 import {
   Album,
   Boxes,
+  Image,
   OctagonAlert,
   PackagePlus,
   PackageSearch,
+  Text,
   Truck,
 } from "lucide-react";
 import { FormEvent } from "react";
@@ -17,8 +19,11 @@ import { FormEvent } from "react";
 export default function ItemsAddForm() {
   function formHandler(event: FormEvent) {
     event.preventDefault();
-    const fd = new FormData(event.target as HTMLFormElement)
-    const itemData = Object.fromEntries(fd.entries())
+    const target = event.target as HTMLFormElement;
+    const fd = new FormData(target);
+    const itemData = Object.fromEntries(fd.entries());
+    console.log(itemData);
+    target.reset();
   }
 
   return (
@@ -26,31 +31,33 @@ export default function ItemsAddForm() {
       className="w-full h-[75%] mt-4 p-4 flex flex-col justify-between"
       onSubmit={(event) => formHandler(event)}
     >
-      <InputWrapper width="w-full">
+      <InputWrapper width="w-full" height='h-[40px]'>
         <PackageSearch />
-        <Input type="text" placeholder="Name" variant="name" name="name" />
+        <Input type="text" placeholder="Name" name="name" required />
       </InputWrapper>
       <div className="w-full flex justify-between gap-4">
-        <InputWrapper width="w-3/4">
+        <InputWrapper width="w-3/4" height='h-[40px]'>
           <Boxes />
           <Input
             type="number"
             placeholder="Quantity"
             variant="quantity"
             name="quantity"
+            required
           />
         </InputWrapper>
-        <InputWrapper width="w-auto">
+        <InputWrapper width="w-auto" height='h-[40px]'>
           <OctagonAlert />
           <Input
             type="number"
             placeholder="Min Quantity"
-            variant="minQuantity"
             name="minQuantity"
+            required
           />
         </InputWrapper>
       </div>
       <div className="w-full h-[70px] bg-white rounded-md flex justify-center items-center">
+        <Image className="mx-2"/>
         <Input
           variant={"file"}
           type="file"
@@ -77,7 +84,13 @@ export default function ItemsAddForm() {
           </SelectWrapper>
         </div>
       </div>
-      <TextareaInput placeholder={"Description (optional)"} />
+      <InputWrapper width={"w-full"} height={'h-[100px]'}>
+        <Text />
+        <Input
+          placeholder={"Description (optional)"}
+          name="description"
+        />
+      </InputWrapper>
       <Button variant={"formSubmit"}>
         <PackagePlus className="mx-2" />
         Add Item
