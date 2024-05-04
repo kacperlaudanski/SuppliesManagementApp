@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 
-export default function InputWrapper({
-  children,
-  width,
-}: {
+interface InputWrapper {
   children: ReactNode;
   width: string;
-}) {
+  height:string
+}
+
+export default function InputWrapper({children, width, height}:InputWrapper) {
   return (
     <div
-      className={`${width} h-[40px] bg-white flex relative items-center p-2 rounded-md`}
+      className={`${width} ${height} bg-white flex relative items-center p-2 rounded-md`}
     >
       {children}
     </div>
