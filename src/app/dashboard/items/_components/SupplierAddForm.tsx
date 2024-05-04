@@ -18,7 +18,7 @@ export default function SupplierAddForm() {
     const target = event.target as HTMLFormElement
     const fd = new FormData(target)
     const supplierData = Object.fromEntries(fd.entries())
-
+    
     target.reset()
   }
 

@@ -3,7 +3,6 @@ import Button from "../../../components/Button";
 import InputWrapper from "../../../components/form/InputWrapper";
 import SelectOption from "../../../components/form/SelectOption";
 import SelectWrapper from "../../../components/form/SelectWrapper";
-import TextareaInput from "../../../components/form/TextareaInput";
 import {
   Album,
   Boxes,
@@ -17,12 +16,13 @@ import {
 import { FormEvent } from "react";
 
 export default function ItemsAddForm() {
+
   function formHandler(event: FormEvent) {
     event.preventDefault();
     const target = event.target as HTMLFormElement;
     const fd = new FormData(target);
     const itemData = Object.fromEntries(fd.entries());
-    console.log(itemData);
+    
     target.reset();
   }
 

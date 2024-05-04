@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import FormHeader from "../../../components/form/FormHeader";
 import SupplierAddForm from "./SupplierAddForm";
