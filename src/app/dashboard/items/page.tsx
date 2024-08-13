@@ -3,28 +3,21 @@
 import ItemsAsideTab from "@/app/dashboard/items/_components/ItemsAsideTab";
 import { FormEvent, useState } from "react";
 import OrderPeriodModal from "./_components/OrderPeriodModal";
+import StockLevelModal from "./_components/StockLevelModal";
 
 export default function Items() {
 
-  const [openModal, setOpenModal] = useState(false); 
-
-  function openOrderPeriodModal(){
-    setOpenModal(true) 
-  }
-
-  function openStockLvlModal(){
-    console.log('opening stock lvl calculator...')
-  }
-
+  const [openOrderPeriodModal, setOpenOrderPeriodModal] = useState(false); 
+  const [openStockLevelModal, setOpenStockLevelModal] = useState(false); 
 
   function handleButtonClick(event: FormEvent){
     if(event !== null && event.target !== null) {
       const clickedButton = event.target as Element
       if(clickedButton.matches(`[data-order-period-btn]`)){
-        openOrderPeriodModal()
+        setOpenOrderPeriodModal(true)
       }
       if(clickedButton.matches(`[data-stock-lvl-btn]`)){
-        openStockLvlModal()
+        setOpenStockLevelModal(true)
       }
     }
   }
@@ -42,7 +35,8 @@ export default function Items() {
           </button>
         </div>
       </section>
-      <OrderPeriodModal openModal={openModal} onCloseModal={() => setOpenModal(false)}/>
+      <OrderPeriodModal openModal={openOrderPeriodModal} onCloseModal={() => setOpenOrderPeriodModal(false)}/>
+      <StockLevelModal openModal={openStockLevelModal} onCloseModal={() => setOpenStockLevelModal(false)} /> 
     </main>
   );
 }
