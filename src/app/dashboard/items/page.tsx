@@ -1,12 +1,15 @@
 'use client'
 
 import ItemsAsideTab from "@/app/dashboard/items/_components/ItemsAsideTab";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import OrderPeriodModal from "./_components/OrderPeriodModal";
 
 export default function Items() {
 
+  const [openModal, setOpenModal] = useState(false); 
+
   function openOrderPeriodModal(){
-    console.log('opening oop calculator...')
+    setOpenModal(true) 
   }
 
   function openStockLvlModal(){
@@ -39,6 +42,7 @@ export default function Items() {
           </button>
         </div>
       </section>
+      <OrderPeriodModal openModal={openModal} onCloseModal={() => setOpenModal(false)}/>
     </main>
   );
 }
