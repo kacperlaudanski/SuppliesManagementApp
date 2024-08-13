@@ -3,7 +3,6 @@ import Button from "../../../components/Button";
 import InputWrapper from "../../../components/form/InputWrapper";
 import SelectOption from "../../../components/form/SelectOption";
 import SelectWrapper from "../../../components/form/SelectWrapper";
-import TextareaInput from "../../../components/form/TextareaInput";
 import {
   Album,
   Boxes,
@@ -13,6 +12,8 @@ import {
   PackageSearch,
   Text,
   Truck,
+  ShieldPlus, 
+  AlarmClock
 } from "lucide-react";
 import { FormEvent } from "react";
 
@@ -28,15 +29,15 @@ export default function ItemsAddForm() {
 
   return (
     <form
-      className="w-full h-[75%] mt-4 p-4 flex flex-col justify-between"
+      className="w-full h-full mt-4 p-4 flex flex-col justify-between"
       onSubmit={(event) => formHandler(event)}
     >
-      <InputWrapper width="w-full" height='h-[40px]'>
+      <InputWrapper width="w-full" height="h-[40px]">
         <PackageSearch />
         <Input type="text" placeholder="Name" name="name" required />
       </InputWrapper>
       <div className="w-full flex justify-between gap-4">
-        <InputWrapper width="w-3/4" height='h-[40px]'>
+        <InputWrapper width="w-3/4" height="h-[40px]">
           <Boxes />
           <Input
             type="number"
@@ -46,7 +47,7 @@ export default function ItemsAddForm() {
             required
           />
         </InputWrapper>
-        <InputWrapper width="w-auto" height='h-[40px]'>
+        <InputWrapper width="w-auto" height="h-[40px]">
           <OctagonAlert />
           <Input
             type="number"
@@ -56,8 +57,28 @@ export default function ItemsAddForm() {
           />
         </InputWrapper>
       </div>
+      <div className="w-full flex gap-4">
+      <InputWrapper width="w-1/2" height="h-[40px]">
+        <AlarmClock />
+        <Input
+          type="number"
+          placeholder="Optimal Order Period (days)"
+          name="optimalPeriod"
+          required
+        />
+      </InputWrapper>
+      <InputWrapper width="w-1/2" height="h-[40px]">
+        <ShieldPlus />
+        <Input
+          type="number"
+          placeholder="Max Quantity"
+          name="suppliesMax"
+          required
+        />
+      </InputWrapper>
+      </div>
       <div className="w-full h-[70px] bg-white rounded-md flex justify-center items-center">
-        <Image className="mx-2"/>
+        <Image className="mx-2" />
         <Input
           variant={"file"}
           type="file"
@@ -68,10 +89,10 @@ export default function ItemsAddForm() {
         <div className="w-1/2 h-[40px] flex items-center p-2 bg-white rounded-md">
           <Truck />
           <SelectWrapper>
-            <SelectOption name={"Option 1"} />
-            <SelectOption name={"Option 2"} />
-            <SelectOption name={"Option 3"} />
-            <SelectOption name={"Option 4"} />
+            <SelectOption name={"Supplier 1"} />
+            <SelectOption name={"Supplier 2"} />
+            <SelectOption name={"Supplier 3"} />
+            <SelectOption name={"Supplier 4"} />
           </SelectWrapper>
         </div>
         <div className="w-1/2 h-[40px] flex items-center p-2 bg-white rounded-md">
@@ -84,12 +105,9 @@ export default function ItemsAddForm() {
           </SelectWrapper>
         </div>
       </div>
-      <InputWrapper width={"w-full"} height={'h-[100px]'}>
+      <InputWrapper width={"w-full"} height={"h-[100px]"}>
         <Text />
-        <Input
-          placeholder={"Description (optional)"}
-          name="description"
-        />
+        <Input placeholder={"Description (optional)"} name="description" />
       </InputWrapper>
       <Button variant={"formSubmit"}>
         <PackagePlus className="mx-2" />
