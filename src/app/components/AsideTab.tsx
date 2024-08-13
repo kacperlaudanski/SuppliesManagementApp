@@ -9,7 +9,7 @@ export default function AsideTab({ children }: { children: ReactNode }) {
   return (
     <aside
       className={`${
-        isAsideVisible ? "w-[270px]" : "w-[50px]"
+        isAsideVisible ? "w-1/4" : "w-[50px]"
       } h-full bg-white relative border-t-2 border-inherit border-solid transition-all duration-300 ease-in-out shadow-[0px_9px_14px_0px_#00000024]`}
     >
       <Button
