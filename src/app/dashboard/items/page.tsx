@@ -1,5 +1,6 @@
 'use client'
 
+import Modal from "@/app/components/Modal";
 import ItemsAsideTab from "@/app/dashboard/items/_components/ItemsAsideTab";
 import { FormEvent, useState } from "react";
 import OrderPeriodModal from "./_components/OrderPeriodModal";
@@ -35,8 +36,14 @@ export default function Items() {
           </button>
         </div>
       </section>
-      <OrderPeriodModal openModal={openOrderPeriodModal} onCloseModal={() => setOpenOrderPeriodModal(false)}/>
-      <StockLevelModal openModal={openStockLevelModal} onCloseModal={() => setOpenStockLevelModal(false)} /> 
+      <Modal styles={'w-1/2 h-[400px] bg-white'} name={"Calculate OOP"} openModal={openOrderPeriodModal} onCloseModal={() => setOpenOrderPeriodModal(false)}>
+        <form>
+          Zawartość
+        </form>
+      </Modal>
+      <Modal styles={'w-1/2 h-[400px] bg-white'} name={"Calculate Min/Max Stock Level"} openModal={openStockLevelModal} onCloseModal={() => setOpenStockLevelModal(false)}>  
+        <div>Zawartość</div>
+      </Modal>
     </main>
   );
 }
