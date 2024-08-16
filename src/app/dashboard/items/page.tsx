@@ -7,6 +7,7 @@ import Modal from "@/app/components/Modal";
 import ItemsAsideTab from "@/app/dashboard/items/_components/ItemsAsideTab";
 import { FormEvent, useState } from "react";
 import OrderPeriodForm from "./_components/OrderPeriodForm";
+import StockLevelForm from "./_components/StockLevelForm";
 
 export default function Items() {
   const [openOrderPeriodModal, setOpenOrderPeriodModal] = useState(false);
@@ -55,12 +56,12 @@ export default function Items() {
         <OrderPeriodForm />
       </Modal>
       <Modal
-        styles={"w-1/2 h-[400px] bg-white"}
+        styles={"w-1/2 pb-4 bg-neutral-100 rounded-md"}
         name={"Calculate Min/Max Stock Level"}
         openModal={openStockLevelModal}
         onCloseModal={() => setOpenStockLevelModal(false)}
       >
-        <div>Zawartość</div>
+        <StockLevelForm /> 
       </Modal>
     </main>
   );
